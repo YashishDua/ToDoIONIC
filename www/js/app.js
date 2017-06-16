@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic'])
-.controller('listController',function($scope){
+.controller('listController',function($scope,$ionicListDelegate){
 $scope.items = [] ;
 
 $scope.addItem = function() {
@@ -13,6 +13,13 @@ $scope.addItem = function() {
     $scope.items.push({'name':name})
   }
 };
+
+$scope.purchaseItem = function(item) {
+  $scope.item = item;
+  $scope.item['status'] = 'purchased';
+  $ionicListDelegate.closeOptionButtons();
+};
+
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
