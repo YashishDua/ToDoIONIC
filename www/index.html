@@ -26,11 +26,30 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+
+    <script>
+  // Initialize the Firebase SDK
+  var config = {
+    apiKey: 'AIzaSyDTPMXKFtrcaMwTunkEvW-RUdMei7a8P_I',
+    authDomain: 'todoionic-88887.firebaseapp.com',
+    databaseURL: 'https://todoionic-88887.firebaseio.com/',
+    storageBucket: 'gs://todoionic-88887.appspot.com'
+  };
+  firebase.initializeApp(config);
+</script>
+
+
   </head>
   <body ng-app="starter" ng-controller="listController">
 
